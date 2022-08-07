@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156454913-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-156454913-1');
+	</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign in &bullet; myITS SSO</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://my.its.ac.id/assets/media/favicons/favicon-web.png">
+    <link rel="stylesheet" type="text/css" href="https://my.its.ac.id/assets/css/its-login.css">
+    <link rel="stylesheet" type="text/css" href="https://my.its.ac.id/assets/plugins/nprogress/nprogress.css">
+    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		.alert-error {
+			color: #f1c40f !important;
+			padding: 10px;
+			border-radius: 3px;
+			text-align: center;
+		}
+
+		.btn-eye {
+			background-color: transparent;
+			padding: 5px;
+			border: none;
+		}
+
+		.btn-eye:hover {
+			cursor: pointer;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="box">
+			<img srcset="https://my.its.ac.id/assets/media/img/@2x/logo.png 2x, https://my.its.ac.id/assets/media/img/logo.png 1x"
+					src="https://my.its.ac.id/assets/media/img/logo.png" alt="Logo ITS" class="logo">
+			<div class="description">
+				<img srcset="https://my.its.ac.id/assets/media/img/@2x/myits-sso-white.png 2x, https://my.its.ac.id/assets/media/img/myits-sso-white.png 1x"
+						src="https://my.its.ac.id/assets/media/img/myits-sso-white.png" alt="myITS" class="myits">
+			</div>
+						
+	
+	<form id="form-login" method="post" action="https://my.its.ac.id/signin" autocomplete="off">
+                    				<input type="hidden" name="client_id" value="8F7FA330-B0AF-4D91-9EC4-1A4182336EEC">
+            		            				<input type="hidden" name="response_type" value="code">
+            		            				<input type="hidden" name="scope" value="openid integra profile email phone group role resource">
+            		            				<input type="hidden" name="state" value="54f075ea0f220235b48430cf643069e5">
+            		            				<input type="hidden" name="prompt" value="">
+            		            				<input type="hidden" name="redirect_uri" value="https://my.its.ac.id/sso/auth">
+            		            				<input type="hidden" name="nonce" value="87865f20a16a5ad1ff9d961ebc597997">
+            				<div class="text-orange" style="min-height: 20px; font-weight: bold; margin-bottom: 15px; text-align: center">
+			<small class="notification_caps" style="display: none;">Caps lock is on!</small>
+			<small class="my_its_id_required" style="display: none;">myITS ID is required</small>
+		</div>
+
+		<div id="inputusername" class="inputbox">
+			<input type="text" id="username" value="" required autocomplete="off">
+			<label for="">myITS ID</label>
+		</div>
+
+		<div id="inputpassword" class="inputbox" style="display: none;">
+				<input type="password" id="password" required autocomplete="off">
+
+			<label for="">Password</label>
+		</div>
+				<input type="hidden" id="pubkey" value="-----BEGIN PUBLIC KEY-----
+						MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2bgOKku2Md7rCInr5+vpr4gZJ
+						9uSjTBVAl2loNGEfq3dvnwt3l+WBYnZFbKAJfE219Fq8xUyAamviK+80Hi5lzRrT
+						At2dXXGHlxKDdbOdZNrVy7OfVZAS+3s3vxO7g3Ac0tTFIfRf4AsN/ItYFUHjeUNe
+						9zdbz7Mg7ye3nI/S7QIDAQAB
+						-----END PUBLIC KEY-----">
+		<input type="hidden" name="content" value="" id="encrypted">
+		<input type="hidden" name="password_state" value="" id="password_state">
+		<input type="hidden" name="device_method" value="" id="device_method">
+		<div class="inputbox">
+			<button id="continue" type="button" class="btn btn-block bg-orange">Next</button>
+			<button id="login" type="submit" class="btn btn-block bg-orange" style="display: none">Sign in</button>
+		</div>
+	</form>
+
+	<div class="row">
+		<div class="column p-b-0" style="padding-top: 5px">
+			<a href="https://my.its.ac.id/sso/password/forgot" style="font-weight: normal">Forgot password?</a>
+		</div>
+		<div class="column text-right text-white p-t-0 p-b-0">
+			<div class="select-style">
+				<select name="lang" id="lang" onchange="location = this.value;">
+					<option value="https://my.its.ac.id/signin/lang?locale=en-US&continue=https://my.its.ac.id/?client_id%3D8F7FA330-B0AF-4D91-9EC4-1A4182336EEC%26amp%3Bresponse_type%3Dcode%26amp%3Bscope%3Dopenid%2Bintegra%2Bprofile%2Bemail%2Bphone%2Bgroup%2Brole%2Bresource%26amp%3Bstate%3D54f075ea0f220235b48430cf643069e5%26amp%3Bprompt%3D%26amp%3Bredirect_uri%3Dhttps%253A%252F%252Fmy.its.ac.id%252Fsso%252Fauth%26amp%3Bnonce%3D87865f20a16a5ad1ff9d961ebc597997" selected>EN</option>
+					<option value="https://my.its.ac.id/signin/lang?locale=id-ID&continue=https://my.its.ac.id/?client_id%3D8F7FA330-B0AF-4D91-9EC4-1A4182336EEC%26amp%3Bresponse_type%3Dcode%26amp%3Bscope%3Dopenid%2Bintegra%2Bprofile%2Bemail%2Bphone%2Bgroup%2Brole%2Bresource%26amp%3Bstate%3D54f075ea0f220235b48430cf643069e5%26amp%3Bprompt%3D%26amp%3Bredirect_uri%3Dhttps%253A%252F%252Fmy.its.ac.id%252Fsso%252Fauth%26amp%3Bnonce%3D87865f20a16a5ad1ff9d961ebc597997" >ID</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+		</div>
+		<footer class="m-t-30">&copy; 2022 Institut Teknologi Sepuluh Nopember. <em>v2.4.0</em></footer>
+	</div>
+
+	<script src="https://my.its.ac.id/assets/js/core/jquery.min.js"></script>
+    <script src="https://my.its.ac.id/assets/plugins/nprogress/nprogress.js"></script>
+	
+    
+<script src="https://my.its.ac.id/assets/js/common.min.js"></script>
+<script src="https://my.its.ac.id/assets/js/jsencrypt.min.js"></script>
+
+<script>
+
+const autofillContent = `"${String.fromCharCode(0xFEFF)}"`;
+function checkAutofill(input) {
+    if (!input.value) {
+        const style = window.getComputedStyle(input);
+        if (style.content !== autofillContent)
+            return false;
+    }
+    // the autofill was detected
+    username.classList.add('filled');
+    password.classList.add('filled');
+    return true;
+}
+
+const username = document.querySelector("input[type=text]");
+const password = document.querySelector("input[type=password]");
+
+if (!checkAutofill(username)) {
+    let interval = 0;
+    const intervalId = setInterval(() => {
+        if (checkAutofill(username) || interval++ >= 20)
+            clearInterval(intervalId);
+    }, 100);
+}
+
+$("#username").on('keydown', function (e) {
+    if (e.keyCode == 13) {
+        $('#continue').click();
+    }
+});
+
+$("#inputpassword").on('keydown', function (e) {
+    if (e.keyCode == 13) {
+		submitForm();
+    }
+});
+
+function submitForm() {
+	var encrypted = encrypt();
+	$("#encrypted").val(encrypted);
+
+	$("#form-login").submit();
+}
+
+function encrypt() {
+	var encryptor = new JSEncrypt();
+	encryptor.setPublicKey($('#pubkey').val());
+	var username = $("#username").val();
+	var password = $("#password").val();
+	var device_method = $("#device_method").val();
+	var password_state = $("#password_state").val();
+	var plaintext = { u : username, p : password, dm: device_method, ps: password_state};
+	var myJSON = JSON.stringify(plaintext);
+	var encrypted = encryptor.encrypt(myJSON);
+
+	return encrypted;
+}
+
+$(function() {
+	$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+			event.preventDefault();
+		}
+	});
+
+	loader = `<i class="fa fa-spinner fa-pulse"></i>`;
+	button = `Lanjutkan`;
+	$('#continue').click(function() {
+		if ($("#username").val() == "") {
+		    // $("#login").click();
+			$(".my_its_id_required").show();
+			return
+		} else {
+			$('#continue').empty().append(loader);
+			$("#inputpassword").show();
+			$('#continue').empty().append(button);
+			$("#continue").hide();
+			$(".my_its_id_required").hide();
+			$("#password").focus();
+
+			$("#password_state").val(true);
+			$("#device_method").val("");
+			$("#login").show();
+		}
+	});
+
+	$("#inputusername").click(function(){
+		$('#continue').show();
+		$("#password").val("");
+		$("#inputpassword").hide();
+		$("#login").hide();
+	});
+
+	$("#username").change(function () {
+		if (!$(this).val().length) {
+			$(".my_its_id_required").show();
+			return;
+		}
+		$(".my_its_id_required").hide();
+	});
+
+	$("#login").click(function(){
+		submitForm();
+	});
+});
+</script>
+
+</body>
+</html>
