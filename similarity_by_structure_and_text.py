@@ -101,7 +101,14 @@ def similarity_by_structure(html1, html2):
     tags_html1 = get_html_tag(html1)
     tags_html2 = get_html_tag(html2)
 
+    print("HTML TAG WEB PALSU")
+    print(tags_html1)
+    print("HTML TAG WEB ASLI")
+    print(tags_html2)
+
     lcs_result = lcs(tags_html1, tags_html2)
+
+    print("LCS\n", lcs_result[1])
     return float(lcs_result[0]/len(tags_html1))*100
 
     # diff = difflib.SequenceMatcher()
@@ -116,19 +123,19 @@ def similarity_by_text(text1, text2):
 
     return calculate_cosine(text_arr_tokenize.toarray()[0], text_arr_tokenize.toarray()[1]) * 100
 
-html1 = read_file("amazon_fake.html")
-html2 = read_file("amazon_real.html")
+html1 = read_file("paypal_fake4.html")
+html2 = read_file("paypal_real.html")
 
 html1_text = get_rendered_text(html1)
 html2_text = get_rendered_text(html2)
 
-print("======================")
-print(html1_text)
-print("======================")
+# print("======================")
+# print(html1_text)
+# print("======================")
 
-print("======================")
-print(html2_text)
-print("======================")
+# print("======================")
+# print(html2_text)
+# print("======================")
 
 sim_by_html_structure = similarity_by_structure(html1, html2)
 sim_by_rendered_text = similarity_by_text(html1_text, html2_text)
